@@ -1,6 +1,3 @@
 [submodule "instagram"]
 	path = instagram
 	url = https://github.com/instagrambot/instabot.git
-[submodule "instabot"]
-        path = instabot
-        url = https://github.com/instagrambot/instabot.git
