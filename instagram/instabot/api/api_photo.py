@@ -73,11 +73,12 @@ def compatible_aspect_ratio(size):
     min_ratio, max_ratio = 4.0 / 5.0, 90.0 / 47.0
     width, height = size
     ratio = width * 1.0 / height * 1.0
-    print("FOUND: w:{} h:{} r:{}".format(width, height, ratio))
+    print("FOUND IT: w:{} h:{} r:{}".format(width, height, ratio))
     return min_ratio <= ratio <= max_ratio
 
 
 def configure_photo(self, upload_id, photo, caption=""):
+    print("configuring photo...")
     (w, h) = get_image_size(photo)
     data = self.json_data(
         {
@@ -103,7 +104,7 @@ def upload_photo(
     caption=None,
     upload_id=None,
     from_video=False,
-    force_resize=False,
+    force_resize=True,
     options={},
 ):
     """Upload photo to Instagram
@@ -123,6 +124,9 @@ def upload_photo(
 
     @return Boolean
     """
+
+    api.logger.info("Starting photo upload... api_photo.py")
+
     options = dict(
         {"configure_timeout": 15, "rename": True},
         **(options or {})
@@ -132,17 +136,26 @@ def upload_photo(
     if not photo:
         return False
     if not compatible_aspect_ratio(get_image_size(photo)):
-        self.logger.error(
+        self.logger.info(
             "Photo does not have a compatible photo aspect ratio."
         )
         if force_resize:
+            self.logger.info(
+                "Forcing resize of image"
+            )
             photo = resize_image(photo)
         else:
+            self.logger.info(
+                "Returning FALSE."
+            )
             return False
 
     with open(photo, "rb") as f:
         photo_bytes = f.read()
 
+    self.logger.info(
+        "Creating data object"
+    )
     data = {
         "upload_id": upload_id,
         "_uuid": self.uuid,
@@ -156,22 +169,22 @@ def upload_photo(
             {"Content-Transfer-Encoding": "binary"},
         ),
     }
-#     self.session.headers.update(
-#         {
-#             "X-IG-Capabilities": "3Q4=",
-#             "X-IG-Connection-Type": "WIFI",
-#             "Cookie2": "$Version=1",
-#             "Accept-Language": "en-US",
-#             "Accept-Encoding": "gzip, deflate",
-#             "Content-type": m.content_type,
-#             "Connection": "close",
-#             "User-Agent": self.user_agent,
-#         }
-#     )
-#     response = self.session.post(
-#         config.API_URL + "upload/photo/",
-#         data=m.to_string()
-#     )
+    self.session.headers.update(
+         {
+             "X-IG-Capabilities": "3Q4=",
+             "X-IG-Connection-Type": "WIFI",
+             "Cookie2": "$Version=1",
+             "Accept-Language": "en-US",
+             "Accept-Encoding": "gzip, deflate",
+             "Content-type": m.content_type,
+             "Connection": "close",
+             "User-Agent": self.user_agent,
+         }
+     )
+     response = self.session.post(
+         config.API_URL + "upload/photo/",
+         data=m.to_string()
+     )
 
     dataEncoded = MultipartEncoder(data, boundary=self.uuid).to_string()
     response = self.send_request(
@@ -181,6 +194,9 @@ def upload_photo(
         with_signature=False
     )
     configure_timeout = options.get("configure_timeout")
+    self.logger.info(
+        "Checking response"
+    )
 #     if response.status_code == 200:
     if response:
         for attempt in range(4):
@@ -268,7 +284,7 @@ def resize_image(fname):
         pass
     img = img.convert("RGBA")
     ratio = w * 1.0 / h * 1.0
-    print("FOUND w:{w}, h:{h}, ratio={r}".format(w=w, h=h, r=ratio))
+    print("FOUND IT! w:{w}, h:{h}, ratio={r}".format(w=w, h=h, r=ratio))
     if w > h:
         print("Horizontal image")
         if ratio > (h_lim["w"] / h_lim["h"]):

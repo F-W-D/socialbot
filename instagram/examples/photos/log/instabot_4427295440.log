@@ -1,0 +1,6 @@
+2019-12-18 11:03:50,221 Instabot Started
+2019-12-18 11:03:53,930 Checking 02.jpg
+2019-12-18 11:03:53,930 Uploading this pic yo `02.jpg` with caption: `I'm the caption of #vertical #pic 02 that will be resized and cropped, with a mention to @maxdevblock`
+2019-12-18 11:03:54,769 [41mERROR...[0m
+2019-12-18 11:03:54,770 [Errno 2] No such file or directory: u'/media/02.jpg'
+2019-12-18 11:03:54,771 Total requests: 20

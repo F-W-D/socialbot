@@ -1,0 +1,6 @@
+2019-12-18 11:02:50,512 Instabot Started
+2019-12-18 11:02:53,933 Checking 02.jpg
+2019-12-18 11:02:53,934 Uploading this pic yo `02.jpg` with caption: `I'm the caption of #vertical #pic 02 that will be resized and cropped, with a mention to @maxdevblock`
+2019-12-18 11:02:53,934 [41mERROR...[0m
+2019-12-18 11:02:53,934 'Bot' object has no attribute 'upload_photos'
+2019-12-18 11:02:53,935 Total requests: 20

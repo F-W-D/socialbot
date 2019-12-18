@@ -96,7 +96,7 @@ def upload_pictures():  # Automatically post a pic in 'pics' folder
                 caption = pic_name.replace("-", " ")
 
             full_caption = caption + "\n" + config.FOLLOW_MESSAGE
-            bot.logger.info("Uploading pic with caption: " + caption)
+            bot.logger.info("Uploading pic: %s%s, with caption: %s" % (config.PICS_PATH, pic, full_caption))
             bot.upload_photo(config.PICS_PATH + pic, caption=full_caption)
             if bot.api.last_response.status_code != 200:
                 bot.logger.error(
@@ -148,11 +148,11 @@ schedule.every(3).hours.do(run_threaded, like_timeline)
 schedule.every(8).hours.do(run_threaded, like_hashtags)
 schedule.every(5).hours.do(run_threaded, like_followers_from_random_user_file)
 
-schedule.every(1).days.at("6:00").do(run_threaded, upload_pictures)
+schedule.every(1).days.at("08:39").do(run_threaded, upload_pictures)
 schedule.every(1).days.at("15:33").do(run_threaded, upload_pictures)
 
-schedule.every(1).saturday.at("0:00").do(run_threaded, unfollow_non_followers)
-schedule.every(1).sunday.at("0:00").do(run_threaded, follow_followers)
+schedule.every(1).saturday.at("00:00").do(run_threaded, unfollow_non_followers)
+schedule.every(1).sunday.at("00:00").do(run_threaded, follow_followers)
 
 while True:
     schedule.run_pending()

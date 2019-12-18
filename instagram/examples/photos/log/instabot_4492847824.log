@@ -1,0 +1,6 @@
+2019-12-18 09:20:43,131 Instabot Started
+2019-12-18 09:20:45,874 Checking 02.jpg
+2019-12-18 09:20:45,875 Uploading pic `02.jpg` with caption: `I'm the caption of #vertical #pic 02 that will be resized and cropped, with a mention to @maxdevblock`
+2019-12-18 09:20:48,701 Photo '/Users/PJ_Gutierrez/instabot/instagram/examples/photos/media/02.jpg' is not uploaded.
+2019-12-18 09:20:48,702 Something went wrong...
+2019-12-18 09:20:48,703 Total requests: 2

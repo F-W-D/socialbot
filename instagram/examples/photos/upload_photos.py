@@ -77,15 +77,18 @@ try:
                         "Type the caption now: "
                     )
         bot.logger.info(
-            "Uploading pic `{pic}` with caption: `{caption}`".format(
+            "Uploading this pic yo `{pic}` with caption: `{caption}`".format(
                 pic=pic, caption=caption
             )
         )
+        #os.path.dirname(os.path.realpath(__file__)) +
+        filepath = ("./media/" + pic)
+        print(filepath)
         if not bot.upload_photo(
-            os.path.dirname(os.path.realpath(__file__)) + "/media/" + pic,
+            filepath,
             caption=caption,
         ):
-            bot.logger.error("Something went wrong...")
+            bot.logger.error("Something went wronger...")
             break
         posted_pic_list.append(pic)
         with open(posted_pic_file, "a") as f:

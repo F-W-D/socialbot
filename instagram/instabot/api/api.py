@@ -14,6 +14,7 @@ import pytz
 import requests
 import requests.utils
 import six.moves.urllib as urllib
+import json as simplejson
 from requests_toolbelt import MultipartEncoder
 from tqdm import tqdm
 
@@ -505,7 +506,7 @@ class API(object):
             except JSONDecodeError:
                 return False
         else:
-            # print(endpoint, post, response.content)
+            print(endpoint, post, response.content)
             if response.status_code != 404 and response.status_code != "404":
                 self.logger.error(
                     "Request returns {} error!".format(response.status_code)
@@ -531,7 +532,7 @@ class API(object):
                     "Error checking for `feedback_required`, "
                     "response text is not JSON"
                 )
-                self.logger.info(
+                self.logger.error(
                     'Full Response: {}'.format(str(response))
                 )
                 try:
@@ -790,6 +791,9 @@ class API(object):
 
         @return Boolean
         """
+        self.logger.info(
+            "Starting photo upload 3..."
+        )
         return upload_photo(
             self, photo, caption, upload_id, from_video, force_resize, options
         )

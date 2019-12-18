@@ -1,0 +1,6 @@
+2019-12-18 10:16:14,337 Instabot Started
+2019-12-18 10:16:17,619 Checking 02.jpg
+2019-12-18 10:16:17,619 Uploading this pic `02.jpg` with caption: `I'm the caption of #vertical #pic 02 that will be resized and cropped, with a mention to @maxdevblock`
+2019-12-18 10:16:17,619 [41mERROR...[0m
+2019-12-18 10:16:17,619 upload_photo() got an unexpected keyword argument 'force_resize'
+2019-12-18 10:16:17,620 Total requests: 10

@@ -23,9 +23,9 @@ def download_stories(self, username):
 def upload_story_photo(self, photo, upload_id=None):
     self.small_delay()
     if self.api.upload_story_photo(photo, upload_id):
-        self.logger.info("Photo '{}' is uploaded as Story.".format(photo))
+        self.logger.info("Photo Story '{}' is uploaded as Story.".format(photo))
         return True
-    self.logger.info("Photo '{}' is not uploaded.".format(photo))
+    self.logger.info("Photo Story '{}' is not uploaded.".format(photo))
     return False
 
 

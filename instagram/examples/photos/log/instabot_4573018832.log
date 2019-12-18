@@ -1,0 +1,6 @@
+2019-12-18 10:29:31,905 Instabot Started
+2019-12-18 10:29:38,037 Checking 02.jpg
+2019-12-18 10:29:38,037 Uploading this pic `02.jpg` with caption: `I'm the caption of #vertical #pic 02 that will be resized and cropped, with a mention to @maxdevblock`
+2019-12-18 10:29:43,215 [41mERROR...[0m
+2019-12-18 10:29:43,215 No JSON object could be decoded
+2019-12-18 10:29:43,216 Total requests: 12

@@ -303,7 +303,7 @@ def resize_video(fname, thumbnail=None):
     deg = vid.rotation
     ratio = w * 1.0 / h * 1.0
     print(
-        "FOUND w:{w}, h:{h}, rotation={d}, ratio={r}".format(
+        "FOUND IT! w:{w}, h:{h}, rotation={d}, ratio={r}".format(
             w=w,
             h=h,
             r=ratio,
