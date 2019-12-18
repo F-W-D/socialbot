@@ -1,0 +1,9 @@
+2019-12-12 21:26:02,733 Instabot Started
+2019-12-12 21:27:10,338 Going to unfollow 183 users.
+2019-12-12 21:27:10,949 After filtration by whitelist 182 users left.
+2019-12-12 21:27:11,737 Going to unfollow `user_id` 2005761 with username katy.slc.
+2019-12-12 21:27:13,778 `Unfollow` action has been BLOCKED...!!!
+2019-12-12 21:27:13,778 Activating blocked actions                         protection for `Unfollow` action.
+2019-12-12 21:27:17,238 Blocked likes
+2019-12-12 21:27:17,239 Blocked unfollows
+2019-12-12 21:27:17,239 Total requests: 611

@@ -21,18 +21,18 @@ USERS_FILE = "username_database.txt"
 POSTED_PICS_FILE = "pics.txt"
 # File containing all the photos already posted from the PICS_PATH directory
 
-PICS_PATH = "/Path/to/pics/folder/"
+PICS_PATH = "./pics/"
 # The path of the directory containing the photos the bot will upload
 # NOTE: Being a directory, it must end with '/'
 
 PICS_HASHTAGS = (
-    "#hashtag1 #hashtag2 #hashtag3 #hashtag4 " "#hashtag5 #hashtag6 #hashtag7"
+    "#dance #dancestudio #danceclass #dancecompetition #dancelife #choreography #choreo #friendswhodance"
 )
 # The bot will comment each photo it posts with the hashtags in PICS_HASHTAGS
 # Each string but the last must end with a space
 # NOTE: Instagram allows only for a maximum of 30 hashtags per post.
 
-FOLLOW_MESSAGE = "Follow @my_account for the best photos!"
+FOLLOW_MESSAGE = "\n Ps. Check us out online at www.FWD.dance #linkinbio"
 # The string to insert under the random caption. The bot will construct each
 # photo caption like the following ->
 # [random caption taken from PHOTO_CAPTIONS]
