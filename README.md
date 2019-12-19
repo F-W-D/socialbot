@@ -15,9 +15,11 @@ TikTok [ ]
 YouTube [ ]
 LinkedIn [ ]
 
-Dependencies:
-Python & PIP = [
-        "instabot",
+Dependencies: 
+<br />
+Python & PIP = 
+<br />
+[       "instabot",
         "tqdm",
         "requests",
         "requests-toolbelt",
@@ -28,6 +30,6 @@ Python & PIP = [
         "six",
         "huepy",
         "pytz"]
-
+<br />
 Questions?
 DM me on social: @pj.life
