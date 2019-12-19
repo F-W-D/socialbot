@@ -1,0 +1,13 @@
+2019-12-19 14:46:26,118 Instabot Started
+2019-12-19 14:48:21,538 Going to like media with hashtag #.
+2019-12-19 14:48:22,037 error, read exception bellow
+2019-12-19 14:48:22,038 local variable 'hashtag_id' referenced before assignment
+2019-12-19 14:48:42,113 Going to like media with hashtag #urbandance.
+2019-12-19 14:48:47,416 Going to like 82 medias.
+2019-12-19 14:48:47,418 YOUR `LIKE` ACTION IS BLOCKED
+2019-12-19 14:48:47,420 blocked_actions_protection ACTIVE. Skipping `like` action.
+2019-12-19 14:48:57,431 YOUR `LIKE` ACTION IS BLOCKED
+2019-12-19 14:48:57,432 blocked_actions_protection ACTIVE. Skipping `like` action.
+2019-12-19 14:49:00,344 Total likes: 16/1000
+2019-12-19 14:49:00,345 Blocked likes
+2019-12-19 14:49:00,346 Total requests: 506

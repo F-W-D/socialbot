@@ -169,22 +169,23 @@ def upload_photo(
             {"Content-Transfer-Encoding": "binary"},
         ),
     }
-    self.session.headers.update(
-         {
-             "X-IG-Capabilities": "3Q4=",
-             "X-IG-Connection-Type": "WIFI",
-             "Cookie2": "$Version=1",
-             "Accept-Language": "en-US",
-             "Accept-Encoding": "gzip, deflate",
-             "Content-type": m.content_type,
-             "Connection": "close",
-             "User-Agent": self.user_agent,
-         }
-     )
-     response = self.session.post(
-         config.API_URL + "upload/photo/",
-         data=m.to_string()
-     )
+
+#    self.session.headers.update(
+#         {
+#             "X-IG-Capabilities": "3Q4=",
+#             "X-IG-Connection-Type": "WIFI",
+#             "Cookie2": "$Version=1",
+#             "Accept-Language": "en-US",
+#             "Accept-Encoding": "gzip, deflate",
+#             "Content-type": m.content_type,
+#             "Connection": "close",
+#             "User-Agent": self.user_agent,
+#         }
+#     )
+#     response = self.session.post(
+#         config.API_URL + "upload/photo/",
+#         data=m.to_string()
+#     )
 
     dataEncoded = MultipartEncoder(data, boundary=self.uuid).to_string()
     response = self.send_request(

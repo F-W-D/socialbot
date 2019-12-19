@@ -12,7 +12,6 @@ sys.path.append(os.path.join(sys.path[0], "../../"))
 import schedule  # noqa: E402
 from instabot import Bot, utils  # noqa: E402
 
-
 bot = Bot(
     comments_file=config.COMMENTS_FILE,
     blacklist_file=config.BLACKLIST_FILE,
@@ -38,13 +37,11 @@ def stats():
 
 def like_hashtags():
     bot.like_hashtag(
-        random_hashtag_file.random(), amount=700 // 24
-    )
+        random_hashtag_file.random(), amount=10
 
 
 def like_timeline():
-    bot.like_timeline(amount=300 // 24)
-
+    bot.like_timeline(amount=20)
 
 def like_followers_from_random_user_file():
     bot.like_followers(random_user_file.random(), nlikes=33)
@@ -143,11 +140,12 @@ def run_threaded(job_fn):
 
 #Instagram Schedule
 bot.logger.info("Schedule Started.")
-schedule.every(1).hour.do(run_threaded, stats)
-schedule.every(3).hours.do(run_threaded, like_timeline)
-schedule.every(8).hours.do(run_threaded, like_hashtags)
-schedule.every(5).hours.do(run_threaded, like_followers_from_random_user_file)
 
+schedule.every(3).hours.do(run_threaded, like_hashtags)
+schedule.every(1).hours.do(run_threaded, like_timeline)
+schedule.every(12).hours.do(run_threaded, follow_users_from_hashtag_file)
+
+schedule.every(1).days.do(run_threaded, stats)
 schedule.every(1).days.at("08:39").do(run_threaded, upload_pictures)
 schedule.every(1).days.at("15:33").do(run_threaded, upload_pictures)
 
