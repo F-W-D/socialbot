@@ -3,10 +3,10 @@
 Creating a master project for automating certain tasks from social media accounts. 
 So far we have a sh!tty implementation of the Instagram API using InstagramBot/instabot... but it [mostly] works! 😅
 
-Current Setup:
+Personal Use Setup:
 Raspberry Pi 3 running Buster Lite
 Instagrambot by Instabot
-Python Scheduler for 24/7 scripts
+'Ultimate Scheduler' for 24/7 scripts
 
 Wishlist:
 Twitter [ ]
@@ -15,5 +15,19 @@ TikTok [ ]
 YouTube [ ]
 LinkedIn [ ]
 
+Dependencies:
+Python & PIP = [
+        "instabot",
+        "tqdm",
+        "requests",
+        "requests-toolbelt",
+        "schedule",
+        "pysocks",
+        "responses",
+        "future",
+        "six",
+        "huepy",
+        "pytz"]
+
 Questions?
-Find me on social: @pj.life
+DM me on social: @pj.life
