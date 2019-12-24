@@ -37,7 +37,7 @@ def stats():
 
 def like_hashtags():
     bot.like_hashtag(
-        random_hashtag_file.random(), amount=10
+        random_hashtag_file.random(), amount=10)
 
 
 def like_timeline():
