@@ -141,8 +141,8 @@ def run_threaded(job_fn):
 #Instagram Schedule
 bot.logger.info("Schedule Started.")
 
-schedule.every(3).hours.do(run_threaded, like_hashtags)
-schedule.every(1).hours.do(run_threaded, like_timeline)
+schedule.every(1).hours.do(run_threaded, like_hashtags)
+schedule.every(3).hours.do(run_threaded, like_timeline)
 schedule.every(12).hours.do(run_threaded, follow_users_from_hashtag_file)
 
 schedule.every(1).days.do(run_threaded, stats)
